@@ -1,8 +1,10 @@
 import React from 'react';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+
 import './BannerItem.css';
 
 const BannerItem = ({ slide }) => {
-    const {image, id, prev, next} = slide;
+    const { image, id, prev, next } = slide;
 
     return (
         <div id={`slide${id}`} className="carousel-item relative w-full">
@@ -25,8 +27,12 @@ const BannerItem = ({ slide }) => {
 
 
             <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-12 bottom-0">
-                <a href={`#slide${prev}`} className="btn btn-primary btn-circle mr-4">❮</a>
-                <a href={`#slide${next}`} className="btn btn-primary btn-circle">❯</a>
+                <a href={`#slide${prev}`} className="btn btn-circle mr-4" style={{background: "rgba(255, 255, 255, 0.2)"}}>
+                    <FaArrowLeft></FaArrowLeft>
+                </a>
+                <a href={`#slide${next}`} className="btn btn-primary btn-circle">
+                    <FaArrowRight></FaArrowRight>
+                </a>
             </div>
         </div>
     );
