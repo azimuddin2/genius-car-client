@@ -1,0 +1,8 @@
+.icon{
+    visibility: hidden;
+}
+
+.card:hover .icon{
+    visibility: visible;
+    transition: 0.5s ease-out;
+}
