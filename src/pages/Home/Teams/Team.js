@@ -8,7 +8,7 @@ const Team = ({ team }) => {
     const { image, title, job } = team;
 
     return (
-        <div className="card border h-full">
+        <div className="card border h-full ml-5">
             <figure className="px-6 pt-6">
                 <img src={image} alt="Shoes" className="rounded-xl h-full w-full" />
             </figure>
@@ -19,15 +19,12 @@ const Team = ({ team }) => {
                     <a href='https://web.facebook.com/au.pranto.5' target="_blank" rel="noReferrer">
                         <img src={facebook} className='mr-2 cursor-pointer w-9' alt="Facebook" />
                     </a>
-
                     <a href='https://github.com/azimuddin2' target="_blank" rel="noReferrer">
                         <img src={twitter} className='mr-2 cursor-pointer w-9' alt="Twitter" />
                     </a>
-
                     <a href='https://www.linkedin.com/in/mohammad-azim-uddin-232284241/' target="_blank" rel="noReferrer">
                         <img src={linkedin} className='mr-2 cursor-pointer w-9' alt="Linkedin" />
                     </a>
-
                     <a href='https://github.com/azimuddin2' target="_blank" rel="noReferrer">
                         <img src={instagram} className='mr-2 cursor-pointer w-9' alt="Instagram" />
                     </a>
