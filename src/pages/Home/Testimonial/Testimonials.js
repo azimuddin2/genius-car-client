@@ -51,12 +51,12 @@ const reviews = [
 const Testimonials = () => {
 
     const breakPoints = [
-        { width: 1, itemsToShow: 1 },
+        { width: 1, itemsToShow: 1, pagination: false },
         { width: 550, itemsToShow: 2, itemsToScroll: 2, pagination: false },
-        { width: 850, itemsToShow: 2 },
-        { width: 1150, itemsToShow: 4, itemsToScroll: 2 },
-        { width: 1450, itemsToShow: 5 },
-        { width: 1750, itemsToShow: 6 },
+        { width: 850, itemsToShow: 2, pagination: false },
+        { width: 1150, itemsToShow: 2, itemsToScroll: 2, pagination: false },
+        { width: 1450, itemsToShow: 3, pagination: false },
+        { width: 1750, itemsToShow: 3, pagination: false },
     ];
 
     return (
@@ -67,7 +67,7 @@ const Testimonials = () => {
                 <p className='lg:w-1/2 mx-auto text-secondary leading-7 mt-3 capitalize'>The Majority Have Suffered Alteration In Some Form, By Injected Humour, Or Randomised Words Which Don't Look Even Slightly Believable.</p>
             </div>
 
-            <div className='styling-example mt-10 '>
+            <div className='styling-example mt-6 '>
                 <Carousel
                     breakPoints={breakPoints}
                     enableAutoPlay

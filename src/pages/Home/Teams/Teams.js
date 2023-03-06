@@ -1,6 +1,5 @@
 import React from 'react';
-import Carousel from 'react-multi-carousel';
-import "react-multi-carousel/lib/styles.css";
+import Carousel from 'react-elastic-carousel';
 import team1 from '../../../assets/images/team/1.jpg';
 import team2 from '../../../assets/images/team/2.jpg';
 import team3 from '../../../assets/images/team/3.jpg';
@@ -48,23 +47,14 @@ const teams = [
 
 const Teams = () => {
 
-    const responsive = {
-        desktop: {
-            breakpoint: { max: 3000, min: 992 },
-            items: 3,
-            slidesToSlide: 3
-        },
-        tablet: {
-            breakpoint: { max: 991, min: 577 },
-            items: 2,
-            slidesToSlide: 2
-        },
-        mobile: {
-            breakpoint: { max: 576, min: 0 },
-            items: 1,
-            slidesToSlide: 1
-        }
-    };
+    const breakPoints = [
+        { width: 1, itemsToShow: 1, pagination: false },
+        { width: 550, itemsToShow: 2, itemsToScroll: 2, pagination: false },
+        { width: 850, itemsToShow: 3, pagination: false },
+        { width: 1150, itemsToShow: 3, itemsToScroll: 2, pagination: false },
+        { width: 1450, itemsToShow: 3, pagination: false },
+        { width: 1750, itemsToShow: 3, pagination: false },
+    ];
 
     return (
         <section className='my-20'>
@@ -73,10 +63,10 @@ const Teams = () => {
                 <h1 className='font-bold text-4xl leading-snug text-accent'>Meet Out Team</h1>
                 <p className='lg:w-1/2 mx-auto text-secondary leading-7 mt-3 capitalize'>the majority have suffered alteration in some form, by injected humour, or randomised  words which don't look even slightly believable. </p>
             </div>
-            <div className='mt-10'>
+            <div className='mt-6'>
                 <Carousel
-                    responsive={responsive}
-                    infinite={true}
+                    breakPoints={breakPoints}
+                    enableAutoPlay
                 >
                     {
                         teams.map(team => <Team

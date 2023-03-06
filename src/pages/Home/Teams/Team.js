@@ -8,12 +8,12 @@ const Team = ({ team }) => {
     const { image, title, job } = team;
 
     return (
-        <div className="card border h-full ml-5">
+        <div className="card border h-full md:ml-2 md:mr-2 lg:ml-2 lg:mr-2">
             <figure className="px-6 pt-6">
                 <img src={image} alt="Shoes" className="rounded-xl h-full w-full" />
             </figure>
             <div className="card-body items-center text-center">
-                <h2 className="card-title font-semibold text-2xl text-neutral">{title}</h2>
+                <h2 className="card-title font-semibold text-2xl _">{title}</h2>
                 <p className='text-secondary'>{job}</p>
                 <div className='flex items-center'>
                     <a href='https://web.facebook.com/au.pranto.5' target="_blank" rel="noReferrer">
