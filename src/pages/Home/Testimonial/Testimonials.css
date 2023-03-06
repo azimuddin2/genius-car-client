@@ -1,0 +1,23 @@
+.rec.rec-arrow {
+    background-color: #FF3811;
+    color: white;
+}
+
+.rec.rec-arrow:hover {
+    background-color: #FF3811 !important;
+}
+
+.rec.rec-arrow:disabled {
+    background-color: #dbd8d8;
+}
+
+.rec.rec-arrow:disabled:hover{
+    background-color: #dbd8d8 !important;
+}
+
+.rec-carousel-item:focus {
+    /* outline: none; */
+    color: #FF3811;
+    border: 1px solid #FF3811;
+    /* box-shadow: inset 0 0 1px 1px lightgrey; */
+}
