@@ -57,10 +57,10 @@ const Teams = () => {
     ];
 
     return (
-        <section className='my-20'>
+        <section className='mb-8 mt-16 lg:my-20'>
             <div className='text-center'>
                 <p className='text-primary font-bold text-lg'>Team</p>
-                <h1 className='font-bold text-4xl leading-snug text-accent'>Meet Out Team</h1>
+                <h1 className='font-bold text-3xl lg:text-4xl leading-snug text-accent'>Meet Out Team</h1>
                 <p className='lg:w-1/2 mx-auto text-secondary leading-7 mt-3 capitalize'>the majority have suffered alteration in some form, by injected humour, or randomised  words which don't look even slightly believable. </p>
             </div>
             <div className='mt-6'>

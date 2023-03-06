@@ -14,7 +14,7 @@ const Testimonial = ({ review }) => {
                         </div>
                     </div>
                     <div className='ml-5'>
-                        <h2 className='text-xl font-bold text-neutral'>{name}</h2>
+                        <h2 className='text-base lg:text-xl font-bold text-neutral'>{name}</h2>
                         <p className='font-semibold text-secondary'>{location}</p>
                     </div>
                 </div>

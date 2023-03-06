@@ -8,13 +8,13 @@ import delivery from '../../../assets/icons/delivery.svg';
 
 const Features = () => {
     return (
-        <section className='my-20'>
+        <section className='lg:my-20'>
             <div className='text-center'>
                 <p className='text-primary font-bold text-lg'>Core Features</p>
-                <h1 className='font-bold text-4xl leading-snug text-accent'>Why Choose Us</h1>
+                <h1 className='font-bold text-3xl lg:text-4xl leading-snug text-accent'>Why Choose Us</h1>
                 <p className='lg:w-1/2 mx-auto text-secondary leading-7 mt-3 capitalize'>the majority have suffered alteration in some form, by injected humour, or randomised  words which don't look even slightly believable. </p>
             </div>
-            <div className='mt-10 grid lg:grid-cols-6 gap-5'>
+            <div className='mt-10 grid grid-cols-2 lg:grid-cols-6 md:grid-cols-3 gap-5'>
                 <div className="card border py-7">
                     <figure>
                         <img src={teamsPerson} alt="" className="rounded-xl" />

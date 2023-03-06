@@ -43,7 +43,7 @@ const reviews = [
     {
         id: 6,
         image: people6,
-        name: 'Munzereen Shahid',
+        name: 'Munzereen',
         location: 'Businessman'
     },
 ];
@@ -63,10 +63,9 @@ const Testimonials = () => {
         <section className='my-20'>
             <div className='text-center'>
                 <p className='text-primary font-bold text-lg'>Testimonial</p>
-                <h1 className='font-bold text-4xl leading-snug text-accent'>What Customer Says</h1>
+                <h1 className='font-bold text-3xl lg:text-4xl leading-snug text-accent'>What Customer Says</h1>
                 <p className='lg:w-1/2 mx-auto text-secondary leading-7 mt-3 capitalize'>The Majority Have Suffered Alteration In Some Form, By Injected Humour, Or Randomised Words Which Don't Look Even Slightly Believable.</p>
             </div>
-
             <div className='styling-example mt-6 '>
                 <Carousel
                     breakPoints={breakPoints}
