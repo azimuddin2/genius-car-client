@@ -1,5 +1,6 @@
 import React from 'react';
 import Carousel from 'react-elastic-carousel';
+import { Zoom } from 'react-reveal';
 import team1 from '../../../assets/images/team/1.jpg';
 import team2 from '../../../assets/images/team/2.jpg';
 import team3 from '../../../assets/images/team/3.jpg';
@@ -58,24 +59,28 @@ const Teams = () => {
 
     return (
         <section className='mb-8 mt-16 lg:my-20'>
-            <div className='text-center'>
-                <p className='text-primary font-bold text-lg'>Team</p>
-                <h1 className='font-bold text-3xl lg:text-4xl leading-snug text-accent'>Meet Out Team</h1>
-                <p className='lg:w-1/2 mx-auto text-secondary leading-7 mt-3 capitalize'>the majority have suffered alteration in some form, by injected humour, or randomised  words which don't look even slightly believable. </p>
-            </div>
-            <div className='mt-6'>
-                <Carousel
-                    breakPoints={breakPoints}
-                    enableAutoPlay
-                >
-                    {
-                        teams.map(team => <Team
-                            key={team.id}
-                            team={team}
-                        ></Team>)
-                    }
-                </Carousel>
-            </div>
+            <Zoom left>
+                <div className='text-center'>
+                    <p className='text-primary font-bold text-lg'>Team</p>
+                    <h1 className='font-bold text-3xl lg:text-4xl leading-snug text-accent'>Meet Out Team</h1>
+                    <p className='lg:w-1/2 mx-auto text-secondary leading-7 mt-3 capitalize'>the majority have suffered alteration in some form, by injected humour, or randomised  words which don't look even slightly believable. </p>
+                </div>
+            </Zoom>
+            <Zoom bottom>
+                <div className='mt-6'>
+                    <Carousel
+                        breakPoints={breakPoints}
+                        enableAutoPlay
+                    >
+                        {
+                            teams.map(team => <Team
+                                key={team.id}
+                                team={team}
+                            ></Team>)
+                        }
+                    </Carousel>
+                </div>
+            </Zoom>
         </section>
     );
 };

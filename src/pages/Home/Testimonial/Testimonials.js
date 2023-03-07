@@ -1,6 +1,7 @@
 import React from 'react';
 import Carousel from 'react-elastic-carousel';
 import Testimonial from './Testimonial';
+import { Zoom } from 'react-reveal';
 import people1 from '../../../assets/images/review/people1.png';
 import people2 from '../../../assets/images/review/people2.png';
 import people3 from '../../../assets/images/review/people3.png';
@@ -61,24 +62,28 @@ const Testimonials = () => {
 
     return (
         <section className='my-20'>
-            <div className='text-center'>
-                <p className='text-primary font-bold text-lg'>Testimonial</p>
-                <h1 className='font-bold text-3xl lg:text-4xl leading-snug text-accent'>What Customer Says</h1>
-                <p className='lg:w-1/2 mx-auto text-secondary leading-7 mt-3 capitalize'>The Majority Have Suffered Alteration In Some Form, By Injected Humour, Or Randomised Words Which Don't Look Even Slightly Believable.</p>
-            </div>
-            <div className='styling-example mt-6 '>
-                <Carousel
-                    breakPoints={breakPoints}
-                    enableAutoPlay
-                >
-                    {
-                        reviews.map(review => <Testimonial
-                            key={review.id}
-                            review={review}
-                        ></Testimonial>)
-                    }
-                </Carousel>
-            </div>
+            <Zoom left>
+                <div className='text-center'>
+                    <p className='text-primary font-bold text-lg'>Testimonial</p>
+                    <h1 className='font-bold text-3xl lg:text-4xl leading-snug text-accent'>What Customer Says</h1>
+                    <p className='lg:w-1/2 mx-auto text-secondary leading-7 mt-3 capitalize'>The Majority Have Suffered Alteration In Some Form, By Injected Humour, Or Randomised Words Which Don't Look Even Slightly Believable.</p>
+                </div>
+            </Zoom>
+            <Zoom bottom>
+                <div className='styling-example mt-6 '>
+                    <Carousel
+                        breakPoints={breakPoints}
+                        enableAutoPlay
+                    >
+                        {
+                            reviews.map(review => <Testimonial
+                                key={review.id}
+                                review={review}
+                            ></Testimonial>)
+                        }
+                    </Carousel>
+                </div>
+            </Zoom>
         </section>
     );
 };
