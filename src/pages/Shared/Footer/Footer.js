@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../../../assets/logo.png';
 import { FaGoogle, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import ScrollToTop from 'react-scroll-to-top';
 
 const Footer = () => {
     return (
@@ -34,6 +35,14 @@ const Footer = () => {
                 <a href="/" className="link link-hover">Feedback</a>
                 <a href="/" className="link link-hover">Accessibility</a>
             </div>
+            <ScrollToTop
+                smooth
+                color="#fff"
+                width="20"
+                height="20"
+                top= "500"
+                style={{backgroundColor:'#FF3811', padding: "10px", boxShadow: 'none', borderRadius: "50px"}}
+            />
         </footer>
     );
 };
