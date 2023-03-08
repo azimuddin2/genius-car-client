@@ -1,4 +1,5 @@
 import Main from "../layout/Main/Main";
+import Contact from "../pages/Contact/Contact";
 import Home from "../pages/Home/Home/Home";
 import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
             {
                 path: 'home',
                 element: <Home></Home>
+            },
+            {
+                path: 'contact',
+                element: <Contact></Contact>
             },
             {
                 path: 'login',
