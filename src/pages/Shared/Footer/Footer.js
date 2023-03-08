@@ -36,12 +36,13 @@ const Footer = () => {
                 <a href="/" className="link link-hover">Accessibility</a>
             </div>
             <ScrollToTop
+                className='animate-bounce'
                 smooth
                 color="#fff"
                 width="20"
                 height="20"
-                top= "500"
-                style={{backgroundColor:'#FF3811', padding: "10px", boxShadow: 'none', borderRadius: "50px"}}
+                top="500"
+                style={{ backgroundColor: '#FF3811', padding: "10px", boxShadow: 'none', borderRadius: "50px" }}
             />
         </footer>
     );

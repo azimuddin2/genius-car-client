@@ -1,8 +1,12 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { toast } from 'react-hot-toast';
+import { Link, useNavigate } from 'react-router-dom';
 import login from '../../assets/images/login/login.svg';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const SignUp = () => {
+    const { createUser, updateUserProfile, verifyEmail } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -10,13 +14,45 @@ const SignUp = () => {
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        
+
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                handleUpdateUserProfile(name);
+                form.reset();
+                handleVerifyEmail();
+                toast.success('Please verify your email address.');
+                navigate('/login')
+            })
+            .catch(error => {
+                toast.error(error.message);
+            })
+    };
+
+    const handleUpdateUserProfile = (name) => {
+        const profile = {
+            displayName: name,
+        }
+        updateUserProfile(profile)
+            .then(() => { })
+            .catch(error => {
+                toast.error(error.message);
+            })
+    };
+
+    const handleVerifyEmail = () => {
+        verifyEmail()
+            .then(() => { })
+            .catch(error => {
+                toast.error(error.message);
+            })
     };
 
     return (
         <section className='my-10'>
             <div className="hero">
-                <div className="hero-content grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+                <div className="hero-content grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
                     <div className="text-center lg:text-left">
                         <img src={login} alt="Login" className='w-full lg:w-4/5' />
                     </div>
