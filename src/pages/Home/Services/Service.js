@@ -1,9 +1,11 @@
 import React from 'react';
 import { HiArrowRight } from 'react-icons/hi';
 import { Fade } from 'react-reveal';
+import { useNavigate } from 'react-router-dom';
 
 const Service = ({ service }) => {
     const { _id, img, title, price } = service;
+    const navigate = useNavigate();
 
     return (
         <Fade bottom>
@@ -15,7 +17,10 @@ const Service = ({ service }) => {
                     <h2 className="card-title font-bold text-2xl text-neutral">{title}</h2>
                     <div className='flex items-center justify-between'>
                         <p className='text-primary font-semibold text-xl'>Price: ${price}</p>
-                        <HiArrowRight className='text-primary text-2xl cursor-pointer'></HiArrowRight>
+                        <HiArrowRight
+                            onClick={() => navigate(`/service/${_id}`)}
+                            className='text-primary text-2xl cursor-pointer'
+                        ></HiArrowRight>
                     </div>
                 </div>
             </div>
