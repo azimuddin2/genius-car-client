@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import serviceDetailsImg from '../../assets/images/checkout/checkout.png';
 import './ServiceDetails.css';
 import Download from '../../components/Download/Download';
@@ -7,7 +7,7 @@ import SpecialQuote from '../../components/SpecialQuote/SpecialQuote';
 
 const ServiceDetails = () => {
     const service = useLoaderData();
-    const { title, img, price, facility, description } = service;
+    const { title, img, price, facility, description, _id } = service;
 
     return (
         <section className='px-4 lg:px-8 lg:py-4 '>
@@ -41,11 +41,13 @@ const ServiceDetails = () => {
                     <SpecialQuote></SpecialQuote>
                     <div>
                         <h1 className='my-6 text-4xl font-bold'>Price: ${price}</h1>
-                        <button
-                            className='btn btn-primary text-white w-full h-14 text-lg capitalize'
-                        >
-                            Proceed Checkout
-                        </button>
+                        <Link to={`/checkout/${_id}`}>
+                            <button
+                                className='btn btn-primary text-white w-full h-14 text-lg capitalize'
+                            >
+                                Proceed Checkout
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>

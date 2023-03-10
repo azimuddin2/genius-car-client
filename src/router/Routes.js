@@ -1,9 +1,11 @@
 import Main from "../layout/Main/Main";
+import Checkout from "../pages/Checkout/Checkout";
 import Contact from "../pages/Contact/Contact";
 import Home from "../pages/Home/Home/Home";
 import Login from "../pages/Login/Login";
 import ServiceDetails from "../pages/ServiceDetails/ServiceDetails";
 import SignUp from "../pages/SignUp/SignUp";
+import PrivateRoute from "./PrivateRoute";
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -23,6 +25,15 @@ const router = createBrowserRouter([
             {
                 path: '/service/:id',
                 element: <ServiceDetails></ServiceDetails>,
+                loader: ({ params }) => {
+                    return fetch(`http://localhost:5000/service/${params.id}`)
+                }
+            },
+            {
+                path: '/checkout/:id',
+                element: <PrivateRoute>
+                    <Checkout></Checkout>
+                </PrivateRoute>,
                 loader: ({ params }) => {
                     return fetch(`http://localhost:5000/service/${params.id}`)
                 }
