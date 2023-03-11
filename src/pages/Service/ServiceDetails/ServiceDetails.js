@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
-import serviceDetailsImg from '../../assets/images/checkout/checkout.png';
+import Download from '../../../components/Download/Download';
+import SpecialQuote from '../../../components/SpecialQuote/SpecialQuote';
+import serviceDetailsImg from '../../../assets/images/checkout/checkout.png';
 import './ServiceDetails.css';
-import Download from '../../components/Download/Download';
-import SpecialQuote from '../../components/SpecialQuote/SpecialQuote';
 
 const ServiceDetails = () => {
     const service = useLoaderData();

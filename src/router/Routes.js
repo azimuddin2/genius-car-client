@@ -1,9 +1,9 @@
 import Main from "../layout/Main/Main";
-import Checkout from "../pages/Checkout/Checkout";
+import Checkout from "../pages/Service/Checkout/Checkout";
 import Contact from "../pages/Contact/Contact";
 import Home from "../pages/Home/Home/Home";
 import Login from "../pages/Login/Login";
-import ServiceDetails from "../pages/ServiceDetails/ServiceDetails";
+import ServiceDetails from "../pages/Service/ServiceDetails/ServiceDetails";
 import SignUp from "../pages/SignUp/SignUp";
 import PrivateRoute from "./PrivateRoute";
 
