@@ -33,12 +33,11 @@ const OrderRow = ({ order, handleDelete, handleStatusUpdate }) => {
             </td>
             <td>{phone}</td>
             <td>
-                {
-                    status ?
-                    <button className='btn btn-success'>{status}</button>
-                    :
-                    <button className='btn btn-primary btn-sm capitalize text-white'>Pending</button>
-                }
+                <button
+                    onClick={() => handleStatusUpdate(_id)}
+                    className={status ?  'btn btn-sm capitalize text-white btn-success' : 'btn btn-sm capitalize text-white btn-primary'}>
+                    {status ? status : 'Pending'}
+                </button>
             </td>
             <th>
                 <RiDeleteBinLine
