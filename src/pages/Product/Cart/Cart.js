@@ -1,7 +1,7 @@
 import React from 'react';
 import { useProducts } from '../../../contexts/ProductProvider/ProductProvider';
-import Product from '../../Home/Products/Product';
 import Loading from '../../Shared/Loading/Loading';
+import CartProduct from '../CartProduct/CartProduct';
 
 const Cart = () => {
     const {
@@ -19,18 +19,23 @@ const Cart = () => {
     }
 
     if (!loading && !error && cart.length) {
-        content = cart.map(product => <Product
+        content = cart.map(product => <CartProduct
             key={product._id}
             product={product}
-        ></Product>)
+        ></CartProduct>)
     }
 
     return (
-        <div>
-            {
-                content
-            }
-        </div>
+        <section className='px-4 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-20'>
+            <div>
+                {
+                    content
+                }
+            </div>
+            <div>
+                <h1>Order summary</h1>
+            </div>
+        </section>
     );
 };
 
