@@ -1,15 +1,30 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Zoom } from 'react-reveal';
+import { useProducts } from '../../../contexts/ProductProvider/ProductProvider';
+import Loading from '../../Shared/Loading/Loading';
 import Product from './Product';
 
 const Products = () => {
-    const [products, setProducts] = useState([]);
+    const {
+        state: { products, loading, error }
+    } = useProducts();
 
-    useEffect(() => {
-        fetch('http://localhost:5000/products')
-            .then(res => res.json())
-            .then(data => setProducts(data));
-    }, [])
+    let content;
+
+    if (loading) {
+        content = <Loading></Loading>
+    }
+
+    if (error) {
+        content = <p className='text-primary text-center'>error: something went wrong</p>
+    }
+
+    if (!loading && !error && products.length) {
+        content = products.map(product => <Product
+            key={product._id}
+            product={product}
+        ></Product>)
+    }
 
     return (
         <section>
@@ -22,10 +37,7 @@ const Products = () => {
             </Zoom>
             <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6 py-12'>
                 {
-                    products.map(product => <Product
-                        key={product._id}
-                        product={product}
-                    ></Product>)
+                    content
                 }
             </div>
             <div className='text-center'>

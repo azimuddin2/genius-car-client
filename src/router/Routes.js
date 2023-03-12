@@ -7,6 +7,7 @@ import ServiceDetails from "../pages/Service/ServiceDetails/ServiceDetails";
 import SignUp from "../pages/SignUp/SignUp";
 import PrivateRoute from "./PrivateRoute";
 import Orders from "../pages/Service/Orders/Orders";
+import Cart from "../pages/Product/Cart/Cart";
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
                 element: <Contact></Contact>
             },
             {
+                path: 'cart',
+                element: <Cart></Cart>
+            },
+            {
                 path: 'login',
                 element: <Login></Login>
             },
@@ -57,7 +62,7 @@ const router = createBrowserRouter([
                     <Orders></Orders>
                 </PrivateRoute>
             },
-            
+
         ]
     },
 ]);
