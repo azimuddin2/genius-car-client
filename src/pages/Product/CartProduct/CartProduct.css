@@ -1,0 +1,35 @@
+.remove-btn{
+    background-color: rgba(235, 87, 87, 0.3);
+    color: #EB5757;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-btn {
+    background-color: rgba(255, 153, 0, 0.3);
+    color: #FF9900;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    margin-left: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quantity {
+    background-color:  rgba(149, 160, 167, 0.5);
+    width: 60px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight:500;
+    font-size: 24px;
+}
