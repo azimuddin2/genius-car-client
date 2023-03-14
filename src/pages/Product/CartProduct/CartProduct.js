@@ -2,7 +2,7 @@ import React from 'react';
 import { IoMdAdd, IoMdRemove } from 'react-icons/io';
 
 const CartProduct = ({ product }) => {
-    const { image, title, price } = product;
+    const { image, title, price, quantity } = product;
 
     return (
         <div className="card card-side border p-2 mb-5">
@@ -16,7 +16,7 @@ const CartProduct = ({ product }) => {
                     <button className='text-white w-10 h-10 rounded-full bg-red-200'>
                         <IoMdRemove className='text-3xl font-bold'></IoMdRemove>
                     </button>
-                    <span className='w-12 h-10 bg-zinc-400 text-3xl rounded-xl'>1</span>
+                    <span className='w-12 h-10 bg-zinc-400 text-3xl rounded-xl'>{quantity}</span>
                     <button className='text-white w-10 h-10 rounded-full bg-yellow-200'>
                         <IoMdAdd className='text-3xl font-bold'></IoMdAdd>
                     </button>

@@ -1,13 +1,30 @@
 import React from 'react';
 import { MdOutlineShoppingCart } from 'react-icons/md';
 import { Fade } from 'react-reveal';
-import { useProducts } from '../../../contexts/ProductProvider/ProductProvider';
-import { actionTypes } from '../../../state/ProductState/actionTypes';
+import useCart from '../../../hooks/useCart';
+import { addToDb } from '../../../utilities/storageDB';
 import './Product.css';
 
 const Product = ({ product }) => {
     const { image, title, price } = product;
-    const { dispatch } = useProducts();
+    const [cart, setCart] = useCart();
+
+    const handleAddToCart = (selectedProduct) => {
+        let newCart = [];
+        const exists = cart.find(product => product._id === selectedProduct._id);
+        if (!exists) {
+            selectedProduct.quantity = 1;
+            newCart = [...cart, selectedProduct];
+        }
+        else {
+            const rest = cart.filter(product => product._id !== selectedProduct._id);
+            exists.quantity = exists.quantity + 1;
+            newCart = [...rest, exists];
+        }
+
+        setCart(newCart);
+        addToDb(selectedProduct._id);
+    };
 
     return (
         <div>
@@ -17,7 +34,7 @@ const Product = ({ product }) => {
                         <img src={image} alt={title} className="rounded-xl w-36 py-10" />
                         <div className='flex items-center justify-center bg-white w-8 h-8 rounded-md mb-28 cursor-pointer icon'>
                             <MdOutlineShoppingCart
-                                onClick={() => dispatch({ type: actionTypes.ADD_TO_CART, payload: product })}
+                                onClick={() => handleAddToCart(product)}
                                 className='text-center text-primary text-2xl'
                             ></MdOutlineShoppingCart>
                         </div>

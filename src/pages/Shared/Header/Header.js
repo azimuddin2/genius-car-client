@@ -3,11 +3,11 @@ import { toast } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo.svg';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
-import { useProducts } from '../../../contexts/ProductProvider/ProductProvider';
+import useCart from '../../../hooks/useCart';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
-    const { state: { cart } } = useProducts();
+    const [cart] = useCart();
 
     const handleLogOut = () => {
         logOut()
