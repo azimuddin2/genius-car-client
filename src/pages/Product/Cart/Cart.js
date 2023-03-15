@@ -1,5 +1,6 @@
 import React from 'react';
 import useCart from '../../../hooks/useCart';
+import CartCalculation from '../CartCalculation/CartCalculation';
 import CartProduct from '../CartProduct/CartProduct';
 
 const Cart = () => {
@@ -7,7 +8,7 @@ const Cart = () => {
 
     return (
         <section className='px-4 lg:px-8 lg:py-4 mb-8' style={{backgroundColor: '#f6f5fa87'}}>
-            <div className='p-16 rounded-xl'>
+            <div className='lg:p-16 rounded-xl'>
                 {
                     cart.map(product => <CartProduct
                         key={product._id}
@@ -16,7 +17,7 @@ const Cart = () => {
                 }
             </div>
             <div>
-
+                <CartCalculation cart={cart}></CartCalculation>
             </div>
         </section>
     );

@@ -29,7 +29,7 @@ const useCart = () => {
                 }
                 setCart(savedCart);
             })
-    }, []);
+    }, [cart]);
 
     return [cart, setCart]
 }
