@@ -15,11 +15,15 @@ const CartCalculation = ({ cart }) => {
 
 
     return (
-        <div className='bg-white'>
-            <h2>Select Items: {quantity}</h2>
-            <p>Subtotal Price: ${subtotal}</p>
-            <p>Shipping: ${shipping}</p>
-            <h2>Total Price: ${total.toFixed(2)}</h2>
+        <div className='bg-white p-10 w-full rounded-lg' style={{ backgroundColor: '#F3F3F3' }}>
+            <h1 className='font-semibold text-3xl mb-2'>Order Summary</h1>
+            <h2 className='text-lg font-medium'>Select Items: {quantity}</h2>
+            <p className='text-lg font-medium'>Subtotal Price: ${subtotal}</p>
+            <p className='text-lg font-medium'>Shipping: ${shipping}</p>
+            <h2 className='text-xl font-semibold'>Total Price: ${total.toFixed(2)}</h2>
+            <div className='flex justify-end'>
+                <button className='btn btn-primary text-white capitalize mt-5'>Proceed Checkout</button>
+            </div>
         </div>
     );
 };

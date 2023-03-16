@@ -60,14 +60,14 @@ const CartProduct = ({ product }) => {
                     <button className='remove-btn'>
                         <IoMdRemove
                             onClick={() => handleRemoveQuantity(product)}
-                            className='text-4xl font-bold'
+                            className='text-3xl font-bold'
                         ></IoMdRemove>
                     </button>
                     <span className='quantity'>{quantity}</span>
                     <button className='add-btn'>
                         <IoMdAdd
                             onClick={() => handleAddQuantity(product)}
-                            className='text-4xl font-bold'
+                            className='text-3xl font-bold'
                         ></IoMdAdd>
                     </button>
                 </div>
@@ -81,9 +81,9 @@ const CartProduct = ({ product }) => {
             </div>
             {
                 deleteProduct && <ConfirmationModal
-                    product={product}
-                    handleCloseModal={handleCloseModal}
-                    handleDeleteProduct={handleDeleteProduct}
+                    modalData={product}
+                    successModal={handleDeleteProduct}
+                    closeModal={handleCloseModal}
                 ></ConfirmationModal>
             }
         </div>
