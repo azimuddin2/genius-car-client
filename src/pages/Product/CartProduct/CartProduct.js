@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { toast } from 'react-hot-toast';
 import { IoMdAdd, IoMdRemove } from 'react-icons/io';
 import { RiDeleteBinLine } from 'react-icons/ri';
 import useCart from '../../../hooks/useCart';
@@ -46,6 +47,7 @@ const CartProduct = ({ product }) => {
         const rest = cart.filter(product => product._id !== selectedProduct._id);
         setCart(rest);
         removeFromDb(selectedProduct._id);
+        toast.success('Delete successfully')
     }
 
     return (
@@ -82,6 +84,7 @@ const CartProduct = ({ product }) => {
             {
                 deleteProduct && <ConfirmationModal
                     modalData={product}
+                    name={title}
                     successModal={handleDeleteProduct}
                     closeModal={handleCloseModal}
                 ></ConfirmationModal>

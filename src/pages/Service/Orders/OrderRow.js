@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { RiDeleteBinLine } from 'react-icons/ri';
+import ConfirmationModal from '../../Shared/ConfirmationModal/ConfirmationModal';
 
 const OrderRow = ({ order, handleDelete, handleStatusUpdate }) => {
     const { _id, service, serviceName, servicePrice, customer, email, phone, status } = order;
     const [orderService, setOrderService] = useState({});
+    const [deleteService, setDeleteService] = useState(null);
 
     useEffect(() => {
         fetch(`http://localhost:5000/service/${service}`)
@@ -35,17 +37,26 @@ const OrderRow = ({ order, handleDelete, handleStatusUpdate }) => {
             <td>
                 <button
                     onClick={() => handleStatusUpdate(_id)}
-                    className={status ?  'btn btn-sm capitalize text-white btn-success' : 'btn btn-sm capitalize text-white btn-primary'}>
+                    className={status ? 'btn btn-sm capitalize text-white btn-success' : 'btn btn-sm capitalize text-white btn-primary'}>
                     {status ? status : 'Pending'}
                 </button>
             </td>
             <th>
-                <RiDeleteBinLine
-                    onClick={() => handleDelete(_id)}
-                    className='text-primary text-2xl cursor-pointer'
-                >
-                </RiDeleteBinLine>
+                <label onClick={() => setDeleteService(order._id)} htmlFor="confirmation-modal">
+                    <RiDeleteBinLine
+                        className='text-primary text-2xl cursor-pointer'
+                    >
+                    </RiDeleteBinLine>
+                </label>
             </th>
+            {
+                deleteService && <ConfirmationModal
+                    modalData={order._id}
+                    name={serviceName}
+                    successModal={handleDelete}
+                    // closeModal={handleCloseModal}
+                ></ConfirmationModal>
+            }
         </tr>
     );
 };

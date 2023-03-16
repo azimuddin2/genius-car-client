@@ -15,8 +15,7 @@ const Orders = () => {
     }, [user?.email])
 
     const handleDelete = (id) => {
-        const proceed = window.confirm('Are you sure, you want to cancel this order.');
-        if (proceed) {
+       
             fetch(`http://localhost:5000/order/${id}`, {
                 method: 'DELETE',
             })
@@ -28,7 +27,7 @@ const Orders = () => {
                         setOrders(remaining);
                     }
                 })
-        }
+        
     };
 
     const handleStatusUpdate = (id) => {
