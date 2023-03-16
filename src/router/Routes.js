@@ -8,6 +8,8 @@ import SignUp from "../pages/SignUp/SignUp";
 import PrivateRoute from "./PrivateRoute";
 import Orders from "../pages/Service/Orders/Orders";
 import Cart from "../pages/Product/Cart/Cart";
+import MoreServices from "../pages/Service/MoreServices/MoreServices";
+import MoreProducts from "../pages/Product/MoreProducts/MoreProducts";
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -23,6 +25,10 @@ const router = createBrowserRouter([
             {
                 path: 'home',
                 element: <Home></Home>
+            },
+            {
+                path: 'services',
+                element: <MoreServices></MoreServices>
             },
             {
                 path: '/service/:id',
@@ -41,12 +47,22 @@ const router = createBrowserRouter([
                 }
             },
             {
-                path: 'contact',
-                element: <Contact></Contact>
+                path: 'order',
+                element: <PrivateRoute>
+                    <Orders></Orders>
+                </PrivateRoute>
+            },
+            {
+                path: 'products',
+                element: <MoreProducts></MoreProducts>
             },
             {
                 path: 'cart',
                 element: <Cart></Cart>
+            },
+            {
+                path: 'contact',
+                element: <Contact></Contact>
             },
             {
                 path: 'login',
@@ -56,13 +72,6 @@ const router = createBrowserRouter([
                 path: 'signup',
                 element: <SignUp></SignUp>
             },
-            {
-                path: 'order',
-                element: <PrivateRoute>
-                    <Orders></Orders>
-                </PrivateRoute>
-            },
-
         ]
     },
 ]);

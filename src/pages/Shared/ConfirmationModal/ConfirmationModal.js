@@ -6,7 +6,7 @@ const ConfirmationModal = ({ closeModal, successModal, modalData }) => {
         <div>
             {/* Put this part before </body> tag */}
             <input type="checkbox" id="confirmation-modal" className="modal-toggle" />
-            <div className="modal modal-bottom sm:modal-middle">
+            <div className="modal">
                 <div className="modal-box">
                     <RiErrorWarningLine style={{ color: '#f8bb86' }} className='text-8xl mx-auto'></RiErrorWarningLine>
                     <h3 className="font-semibold text-4xl text-center">Are you sure?</h3>

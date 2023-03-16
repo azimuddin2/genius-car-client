@@ -21,7 +21,7 @@ const BannerItem = ({ slide }) => {
 
             <div className="absolute flex justify-end transform -translate-y-1/2 left-4 lg:left-24 top-3/4 lg:top-2/3">
                 <button className="btn btn-primary mr-2 lg:mr-5">Discover More</button>
-                <button className="btn btn-outline text-white">Latest Project</button>
+                <button className="btn btn-outline text-white hidden md:block lg:block">Latest Project</button>
             </div>
 
             <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-4 lg:right-12 -bottom-5 lg:bottom-0">
