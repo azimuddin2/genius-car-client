@@ -18,24 +18,27 @@ const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
 
     const signInWithGoogle = (provider) => {
+        setLoading(true);
         return signInWithPopup(auth, provider);
     }
 
     const signInWithGitHub = (provider) => {
+        setLoading(true);
         return signInWithPopup(auth, provider);
     }
 
     const signInWithFacebook = (provider) => {
+        setLoading(true);
         return signInWithPopup(auth, provider);
     }
 
     const createUser = (email, password) => {
-        setLoading(true)
+        setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     }
 
     const signIn = (email, password) => {
-        setLoading(true)
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
 
@@ -44,7 +47,7 @@ const AuthProvider = ({ children }) => {
     }
 
     const logOut = () => {
-        setLoading(true)
+        setLoading(true);
         return signOut(auth);
     }
 

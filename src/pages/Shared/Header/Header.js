@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo.svg';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import useCart from '../../../hooks/useCart';
+import CustomLink from './CustomLink';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -18,19 +19,19 @@ const Header = () => {
     };
 
     const menuItems = <>
-        <li><Link to='/home'>Home</Link></li>
-        <li><Link to='/about'>About</Link></li>
-        <li><Link to='/services'>Services</Link></li>
-        <li><Link to='/contact'>Contact</Link></li>
+        <li><CustomLink to='/'>Home</CustomLink></li>
+        <li><CustomLink to='/about'>About</CustomLink></li>
+        <li><CustomLink to='/services'>Services</CustomLink></li>
+        <li><CustomLink to='/contact'>Contact</CustomLink></li>
         <li>
             {
                 user?.uid ?
                     <>
-                        <Link to='/order'>Order</Link>
+                        <CustomLink to='/order'>Order</CustomLink>
                         <button onClick={handleLogOut}>Logout</button>
                     </>
                     :
-                    <Link to='/login'>Login</Link>
+                    <CustomLink to='/login'>Login</CustomLink>
             }
         </li>
     </>
