@@ -4,9 +4,15 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Fade, Zoom } from 'react-reveal';
 import login from '../../assets/images/login/login.svg';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import SocialLogin from '../../components/SocialLogin/SocialLogin';
+import { useState } from 'react';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import './SignUp.css';
 
 const SignUp = () => {
     const { createUser, updateUserProfile } = useContext(AuthContext);
+    const [showPassword, setShowPassword] = useState(false);
+
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -90,12 +96,24 @@ const SignUp = () => {
                                         className="input input-bordered focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
                                         required
                                     />
+                                    <p className='m-12 show-password'
+                                        onClick={() => setShowPassword(!showPassword)}
+                                    >
+                                        {
+                                            showPassword ?
+                                                <FaEyeSlash className='text-gray-400'></FaEyeSlash>
+                                                :
+                                                <FaEye className='text-gray-400'></FaEye>
+                                        }
+                                    </p>
                                 </div>
                                 <div className="form-control mt-6">
                                     <button className="btn btn-primary text-white">Sign up</button>
                                 </div>
                             </form>
-                            <p className='text-center text-base'>Already have an account? <Link to='/login' className='text-primary font-semibold'>Login</Link></p>
+                            <p className='text-center text-neutral font-medium text-base'>Or Sign Up with</p>
+                            <SocialLogin></SocialLogin>
+                            <p className='text-center text-base text-secondary'>Already have an account? <Link to='/login' className='text-primary font-semibold'>Login</Link></p>
                         </div>
                     </Fade>
                 </div>

@@ -1,12 +1,17 @@
 import React, { useContext } from 'react';
+import { useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { Fade, Zoom } from 'react-reveal';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import login from '../../assets/images/login/login.svg';
+import SocialLogin from '../../components/SocialLogin/SocialLogin';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import { FaEyeSlash, FaEye } from 'react-icons/fa';
+import './Login.css';
 
 const Login = () => {
     const { signIn, setLoading } = useContext(AuthContext);
+    const [showPassword, setShowPassword] = useState(false);
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -64,17 +69,29 @@ const Login = () => {
                                     </label>
                                     <input
                                         name='password'
-                                        type="password"
+                                        type={showPassword ? "text" : "password"}
                                         placeholder="Your password"
                                         className="input input-bordered focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
                                         required
                                     />
+                                    <p className='m-12 login-show-password'
+                                        onClick={() => setShowPassword(!showPassword)}
+                                    >
+                                        {
+                                            showPassword ?
+                                                <FaEyeSlash className='text-gray-400'></FaEyeSlash>
+                                                :
+                                                <FaEye className='text-gray-400'></FaEye>
+                                        }
+                                    </p>
                                 </div>
                                 <div className="form-control mt-6">
                                     <button className="btn btn-primary text-white">Login</button>
                                 </div>
                             </form>
-                            <p className='text-center text-base'>New account? <Link to='/signup' className='text-primary font-semibold'>Sign Up</Link></p>
+                            <p className='text-center text-neutral font-medium text-base'>Or Login with</p>
+                            <SocialLogin></SocialLogin>
+                            <p className='text-center text-base text-secondary'>New account? <Link to='/signup' className='text-primary font-semibold'>Sign Up</Link></p>
                         </div>
                     </Fade>
                 </div>
