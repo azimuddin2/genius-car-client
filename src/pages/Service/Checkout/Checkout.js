@@ -15,7 +15,9 @@ const Checkout = () => {
         const name = `${form.firstName.value} ${form.lastName.value}`;
         const phone = form.phone.value;
         const email = user?.email;
-        const message = form.message.value;
+        const currency = form.currency.value;
+        const postcode = form.postcode.value;
+        const address = form.address.value;
 
         const order = {
             service: _id,
@@ -24,7 +26,9 @@ const Checkout = () => {
             customer: name,
             email,
             phone,
-            message
+            currency,
+            postcode,
+            address
         };
 
         fetch('http://localhost:5000/order', {
@@ -98,18 +102,37 @@ const Checkout = () => {
                                 className="input"
                             />
                         </div>
+                        <div className="form-control mb-2">
+                            <select
+                                name='currency'
+                                className="input focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+                            >
+                                <option disabled selected>Select Your Option</option>
+                                <option value="BDT">BDT</option>
+                                <option value="USD">USD</option>
+                            </select>
+                        </div>
+                        <div className="form-control mb-2">
+                            <input
+                                name='postcode'
+                                type="text"
+                                placeholder="Your Post Code"
+                                className="input focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+                                required
+                            />
+                        </div>
                     </div>
                     <div className="form-control">
                         <textarea
-                            name='message'
+                            name='address'
                             rows='5'
-                            placeholder="Your message"
+                            placeholder="Your Address"
                             className="textarea focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
                             required
                         ></textarea>
                     </div>
                     <div className="form-control mt-6">
-                        <button className="btn btn-primary text-white capitalize">Order Confirm</button>
+                        <button className="btn btn-primary text-white capitalize">PAY</button>
                     </div>
                 </form>
             </div>
