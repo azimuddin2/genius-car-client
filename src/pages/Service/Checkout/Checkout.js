@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { toast } from 'react-hot-toast';
 import { useLoaderData } from 'react-router-dom';
 import checkout from '../../../assets/images/checkout/checkout.png';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
@@ -40,10 +39,7 @@ const Checkout = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if (data.acknowledged) {
-                    toast.success('Order successful');
-                    form.reset();
-                }
+                window.location.replace(data.url);
             })
             .catch(error => console.error(error))
     };
@@ -104,10 +100,10 @@ const Checkout = () => {
                         </div>
                         <div className="form-control mb-2">
                             <select
+                                defaultValue='BDT'
                                 name='currency'
                                 className="input focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
                             >
-                                <option disabled selected>Select Your Option</option>
                                 <option value="BDT">BDT</option>
                                 <option value="USD">USD</option>
                             </select>

@@ -10,6 +10,8 @@ import Orders from "../pages/Service/Orders/Orders";
 import Cart from "../pages/Product/Cart/Cart";
 import MoreServices from "../pages/Service/MoreServices/MoreServices";
 import MoreProducts from "../pages/Product/MoreProducts/MoreProducts";
+import PaymentSuccess from "../pages/Payment/PaymentSuccess/PaymentSuccess";
+import PaymentFail from "../pages/Payment/PaymentFail/PaymentFail";
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -47,6 +49,14 @@ const router = createBrowserRouter([
                 element: <PrivateRoute>
                     <Orders></Orders>
                 </PrivateRoute>
+            },
+            {
+                path: '/payment/success',
+                element:  <PaymentSuccess></PaymentSuccess>
+            },
+            {
+                path: '/payment/fail',
+                element: <PaymentFail></PaymentFail>
             },
             {
                 path: 'products',
