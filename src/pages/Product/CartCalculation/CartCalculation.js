@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import CheckoutModal from '../CheckoutModal/CheckoutModal';
 
 const CartCalculation = ({ cart }) => {
+    const [checkoutModal, setCheckoutModal] = useState(null);
 
     let subtotal = 0;
     let quantity = 0;
@@ -22,8 +24,20 @@ const CartCalculation = ({ cart }) => {
             <p className='text-lg font-medium'>Shipping: ${shipping}</p>
             <h2 className='text-xl font-semibold'>Total Price: ${total.toFixed(2)}</h2>
             <div className='flex justify-end'>
-                <button className='btn btn-primary text-white capitalize mt-5'>Proceed Checkout</button>
+                <label
+                    onClick={() => setCheckoutModal(cart)}
+                    htmlFor="checkout-modal"
+                    className="btn btn-primary text-white capitalize mt-5"
+                >
+                    Proceed Checkout
+                </label>
             </div>
+            {
+                checkoutModal && <CheckoutModal
+                    checkoutModal={checkoutModal}
+                    totalPrice={total}
+                ></CheckoutModal>
+            }
         </div>
     );
 };
