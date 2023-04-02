@@ -3,7 +3,7 @@ import { RiDeleteBinLine } from 'react-icons/ri';
 import ConfirmationModal from '../../Shared/ConfirmationModal/ConfirmationModal';
 
 const OrderRow = ({ order, handleDelete, handleStatusUpdate }) => {
-    const { _id, service, serviceName, servicePrice, customer, email, phone, status } = order;
+    const { _id, service, serviceName, servicePrice, customer, email, phone, status, paidAt, paid, transactionId } = order;
     const [orderService, setOrderService] = useState({});
     const [deleteService, setDeleteService] = useState(null);
 
@@ -34,6 +34,15 @@ const OrderRow = ({ order, handleDelete, handleStatusUpdate }) => {
                 <span className="text-base opacity-50">{email}</span>
             </td>
             <td>{phone}</td>
+            <td>{paidAt?.slice(0, 10)}</td>
+            <td>
+                {
+                    paid ?
+                        <p className='text-green-400'>success</p>
+                        :
+                        <p className='text-primary'>unsuccess</p>
+                }
+            </td>
             <td>
                 <button
                     onClick={() => handleStatusUpdate(_id)}
@@ -54,7 +63,7 @@ const OrderRow = ({ order, handleDelete, handleStatusUpdate }) => {
                     modalData={order._id}
                     name={serviceName}
                     successModal={handleDelete}
-                    // closeModal={handleCloseModal}
+                // closeModal={handleCloseModal}
                 ></ConfirmationModal>
             }
         </tr>

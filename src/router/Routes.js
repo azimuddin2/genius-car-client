@@ -12,6 +12,7 @@ import MoreServices from "../pages/Service/MoreServices/MoreServices";
 import MoreProducts from "../pages/Product/MoreProducts/MoreProducts";
 import PaymentSuccess from "../pages/Payment/PaymentSuccess/PaymentSuccess";
 import PaymentFail from "../pages/Payment/PaymentFail/PaymentFail";
+import DisplayError from "../pages/Shared/DisplayError/DisplayError";
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
+        errorElement: <DisplayError></DisplayError>,
         children: [
             {
                 path: '/',
@@ -52,7 +54,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/payment/success',
-                element:  <PaymentSuccess></PaymentSuccess>
+                element: <PaymentSuccess></PaymentSuccess>
             },
             {
                 path: '/payment/fail',

@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { IoCheckmarkCircleSharp } from 'react-icons/io5';
+import { MdDoNotDisturbAlt } from 'react-icons/md';
 import { useLocation } from 'react-router-dom';
 
 const PaymentSuccess = () => {
@@ -19,27 +20,28 @@ const PaymentSuccess = () => {
 
     if(!order?._id){
         return (
-            <div>
-                <p>No order found!</p>
+            <div className='py-12'>
+                <MdDoNotDisturbAlt className='text-8xl md:text-9xl text-red-500 mx-auto'></MdDoNotDisturbAlt>
+                <p className='text-3xl md:text-4xl text-red-500 text-center'>No order found!</p>
             </div>
         )
     }
 
     return (
-        <div className='mt-10 mb-20'>
+        <div className='lg:py-4 px-4 lg:px-8'>
             <div className='text-center'>
-                <IoCheckmarkCircleSharp className='text-green-500 text-9xl mx-auto'></IoCheckmarkCircleSharp>
-                <h1 className='text-5xl text-green-400'>congratulations!</h1>
-                <p className='text-2xl mt-2'>Order Paid Successful</p>
+                <IoCheckmarkCircleSharp className='text-green-500 text-8xl md:text-9xl mx-auto'></IoCheckmarkCircleSharp>
+                <h1 className='text-3xl md:text-5xl text-green-400'>congratulations!</h1>
+                <p className='text-lg md:text-2xl mt-2'>Order Paid Successful</p>
             </div>
-            <div className="overflow-x-auto w-full">
+            <div className="overflow-x-auto w-full mb-10 mt-4">
                 <table className="table w-full">
                     <thead>
                         <tr>
                             <th>Service</th>
                             <th>Price</th>
                             <th>Currency</th>
-                            <th>Shipping Address</th>
+                            <th>Date</th>
                             <th>TransactionId</th>
                             <th className='print:hidden'>Action</th>
                         </tr>
@@ -51,7 +53,7 @@ const PaymentSuccess = () => {
                             </td>
                             <td className='font-semibold text-green-600'>${order.servicePrice}</td>
                             <td>{order.currency}</td>
-                            <td>{order.address}</td>
+                            <td>{order.paidAt.slice(0, 10)}</td>
                             <td>{order.transactionId}</td>
                             <td>
                                 <button
