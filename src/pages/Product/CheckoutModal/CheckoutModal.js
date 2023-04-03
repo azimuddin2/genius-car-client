@@ -4,8 +4,46 @@ import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 const CheckoutModal = ({ checkoutModal, totalPrice }) => {
     const { user } = useContext(AuthContext);
 
+    const price = totalPrice.toString();
+    let title = '';
+
+    for (const product of checkoutModal) {
+        title = title + product.title + ', ';
+    };
+
     const handleSubmit = (event) => {
         event.preventDefault();
+        const form = event.target;
+        const name = `${form.firstName.value} ${form.lastName.value}`;
+        const phone = form.phone.value;
+        const email = user?.email;
+        const currency = form.currency.value;
+        const postcode = form.postcode.value;
+        const address = form.address.value;
+
+        const order = {
+            title,
+            price,
+            customer: name,
+            email,
+            phone,
+            currency,
+            postcode,
+            address
+        };
+
+        fetch('http://localhost:5000/order', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(order)
+        })
+            .then(res => res.json())
+            .then(data => {
+                window.location.replace(data.url);
+            })
+            .catch(error => console.error(error))
     };
 
     return (

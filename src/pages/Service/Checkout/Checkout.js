@@ -6,7 +6,7 @@ import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 const Checkout = () => {
     const { user } = useContext(AuthContext);
     const service = useLoaderData();
-    const { title, price, _id } = service;
+    const { title, price, img } = service;
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -19,9 +19,9 @@ const Checkout = () => {
         const address = form.address.value;
 
         const order = {
-            service: _id,
-            serviceName: title,
-            servicePrice: price,
+            title,
+            img,
+            price,
             customer: name,
             email,
             phone,

@@ -1,17 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { RiDeleteBinLine } from 'react-icons/ri';
 import ConfirmationModal from '../../Shared/ConfirmationModal/ConfirmationModal';
+import orderImg from '../../../assets/images/order/order.png';
 
 const OrderRow = ({ order, handleDelete, handleStatusUpdate }) => {
-    const { _id, service, serviceName, servicePrice, customer, email, phone, status, paidAt, paid, transactionId } = order;
-    const [orderService, setOrderService] = useState({});
+    const { _id, img, title, price, customer, email, phone, status, paidAt, paid } = order;
     const [deleteService, setDeleteService] = useState(null);
-
-    useEffect(() => {
-        fetch(`http://localhost:5000/service/${service}`)
-            .then(res => res.json())
-            .then(data => setOrderService(data))
-    }, [service])
 
     return (
         <tr>
@@ -19,15 +13,20 @@ const OrderRow = ({ order, handleDelete, handleStatusUpdate }) => {
                 <div className="flex items-center">
                     <div className="avatar">
                         <div className="w-16 h-16 rounded-lg">
-                            <img src={orderService.img} alt="Avatar Tailwind CSS Component" />
+                            {
+                                img ?
+                                    <img src={img} alt="Service" />
+                                    :
+                                    <img src={orderImg} alt="Product" />
+                            }
                         </div>
                     </div>
                     <div>
-                        <div className="font-bold ml-5">{serviceName}</div>
+                        <div className="font-bold ml-5">{title}</div>
                     </div>
                 </div>
             </td>
-            <td className='font-semibold text-green-600'>${servicePrice}</td>
+            <td className='font-semibold text-green-600'>${price}</td>
             <td>
                 {customer}
                 <br />
@@ -61,7 +60,7 @@ const OrderRow = ({ order, handleDelete, handleStatusUpdate }) => {
             {
                 deleteService && <ConfirmationModal
                     modalData={order._id}
-                    name={serviceName}
+                    name={title}
                     successModal={handleDelete}
                 // closeModal={handleCloseModal}
                 ></ConfirmationModal>
