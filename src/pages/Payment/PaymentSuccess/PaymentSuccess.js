@@ -18,7 +18,7 @@ const PaymentSuccess = () => {
             .then(data => setOrder(data))
     }, [transactionId])
 
-    if(!order?._id){
+    if (!order?._id) {
         return (
             <div className='py-12'>
                 <MdDoNotDisturbAlt className='text-8xl md:text-9xl text-red-500 mx-auto'></MdDoNotDisturbAlt>
@@ -38,7 +38,7 @@ const PaymentSuccess = () => {
                 <table className="table w-full">
                     <thead>
                         <tr>
-                            <th>Service</th>
+                            <th>Service or Product</th>
                             <th>Price</th>
                             <th>Currency</th>
                             <th>Date</th>
@@ -49,9 +49,9 @@ const PaymentSuccess = () => {
                     <tbody>
                         <tr>
                             <td>
-                                {order.serviceName}
+                                {order.title}
                             </td>
-                            <td className='font-semibold text-green-600'>${order.servicePrice}</td>
+                            <td className='font-semibold text-green-600'>${order.price}</td>
                             <td>{order.currency}</td>
                             <td>{order.paidAt.slice(0, 10)}</td>
                             <td>{order.transactionId}</td>

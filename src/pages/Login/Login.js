@@ -8,8 +8,10 @@ import SocialLogin from '../../components/SocialLogin/SocialLogin';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { FaEyeSlash, FaEye } from 'react-icons/fa';
 import './Login.css';
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
+    useTitle('Login');
     const { signIn, setLoading } = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
 

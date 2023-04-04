@@ -3,8 +3,10 @@ import useCart from '../../../hooks/useCart';
 import CartCalculation from '../CartCalculation/CartCalculation';
 import CartProduct from '../CartProduct/CartProduct';
 import addToCartImg from '../../../assets/images/order/add-to-cart.gif';
+import useTitle from '../../../hooks/useTitle';
 
 const Cart = () => {
+    useTitle('Product Cart');
     const [cart] = useCart();
 
     return (

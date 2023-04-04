@@ -3,8 +3,10 @@ import { toast } from 'react-hot-toast';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import OrderRow from './OrderRow';
 import orderImg from '../../../assets/images/order/station.gif';
+import useTitle from '../../../hooks/useTitle';
 
 const Orders = () => {
+    useTitle('Order');
     const { user } = useContext(AuthContext);
     const [orders, setOrders] = useState([]);
 
@@ -59,7 +61,7 @@ const Orders = () => {
                         <table className="table w-full">
                             <thead>
                                 <tr>
-                                    <th>Service</th>
+                                    <th>Service or Product</th>
                                     <th>Price</th>
                                     <th>Name & Email</th>
                                     <th>Phone</th>

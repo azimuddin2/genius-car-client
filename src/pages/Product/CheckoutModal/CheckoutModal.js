@@ -4,7 +4,7 @@ import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 const CheckoutModal = ({ checkoutModal, totalPrice }) => {
     const { user } = useContext(AuthContext);
 
-    const price = totalPrice.toString();
+    const price = totalPrice.toFixed(2).toString();
     let title = '';
 
     for (const product of checkoutModal) {

@@ -2,8 +2,10 @@ import React from 'react';
 import { Zoom } from 'react-reveal';
 import useProducts from '../../../hooks/useProducts';
 import Product from '../../Home/Products/Product';
+import useTitle from '../../../hooks/useTitle';
 
 const MoreProducts = () => {
+    useTitle('Products');
     const [products] = useProducts();
 
     return (

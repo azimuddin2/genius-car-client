@@ -2,9 +2,10 @@ import React from 'react';
 import { toast } from 'react-hot-toast';
 import { Fade, Zoom } from 'react-reveal';
 import contact from '../../assets/images/contact/contact-us.svg';
+import useTitle from '../../hooks/useTitle';
 
 const Contact = () => {
-
+    useTitle('Contact');
     const handleSubmit = (event) => {
         event.preventDefault()
         const form = event.target;

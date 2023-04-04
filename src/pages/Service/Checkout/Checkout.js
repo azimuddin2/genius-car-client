@@ -2,8 +2,10 @@ import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import checkout from '../../../assets/images/checkout/checkout.png';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import useTitle from '../../../hooks/useTitle';
 
 const Checkout = () => {
+    useTitle('Checkout');
     const { user } = useContext(AuthContext);
     const service = useLoaderData();
     const { title, price, img } = service;

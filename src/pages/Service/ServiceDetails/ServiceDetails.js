@@ -4,8 +4,10 @@ import Download from '../../../components/Download/Download';
 import SpecialQuote from '../../../components/SpecialQuote/SpecialQuote';
 import serviceDetailsImg from '../../../assets/images/checkout/checkout.png';
 import './ServiceDetails.css';
+import useTitle from '../../../hooks/useTitle';
 
 const ServiceDetails = () => {
+    useTitle('Service Details')
     const service = useLoaderData();
     const { title, img, price, facility, description, _id } = service;
 

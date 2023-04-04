@@ -7,8 +7,10 @@ import Products from '../Products/Products';
 import Services from '../Services/Services';
 import Teams from '../Teams/Teams';
 import Testimonials from '../Testimonial/Testimonials';
+import useTitle from '../../../hooks/useTitle';
 
 const Home = () => {
+    useTitle('Home');
     return (
         <div className='px-4 lg:px-8'>
             <Banner></Banner>
