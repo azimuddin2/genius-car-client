@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';
-import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import OrderRow from './OrderRow';
-import orderImg from '../../../assets/images/order/station.gif';
-import useTitle from '../../../hooks/useTitle';
+import orderImg from '../../assets/images/order/order.gif';
+import useTitle from '../../hooks/useTitle';
 
 const Orders = () => {
     useTitle('Order');

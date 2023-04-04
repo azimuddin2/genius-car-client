@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { RiDeleteBinLine } from 'react-icons/ri';
-import ConfirmationModal from '../../Shared/ConfirmationModal/ConfirmationModal';
-import orderImg from '../../../assets/images/order/order.png';
+import ConfirmationModal from '../Shared/ConfirmationModal/ConfirmationModal';
+import orderImg from '../../assets/images/order/order.png';
 
 const OrderRow = ({ order, handleDelete, handleStatusUpdate }) => {
     const { _id, img, title, price, customer, email, phone, status, paidAt, paid } = order;

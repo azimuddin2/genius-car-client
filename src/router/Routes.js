@@ -6,13 +6,13 @@ import Login from "../pages/Login/Login";
 import ServiceDetails from "../pages/Service/ServiceDetails/ServiceDetails";
 import SignUp from "../pages/SignUp/SignUp";
 import PrivateRoute from "./PrivateRoute";
-import Orders from "../pages/Service/Orders/Orders";
 import Cart from "../pages/Product/Cart/Cart";
 import MoreServices from "../pages/Service/MoreServices/MoreServices";
 import MoreProducts from "../pages/Product/MoreProducts/MoreProducts";
 import PaymentSuccess from "../pages/Payment/PaymentSuccess/PaymentSuccess";
 import PaymentFail from "../pages/Payment/PaymentFail/PaymentFail";
 import DisplayError from "../pages/Shared/DisplayError/DisplayError";
+import Orders from "../pages/Orders/Orders";
 
 const { createBrowserRouter } = require("react-router-dom");
 
