@@ -9,7 +9,7 @@ const useCart = () => {
         const savedCart = [];
         const keys = Object.keys(storedCart);
 
-        fetch('http://localhost:5000/productByKeys', {
+        fetch('https://genius-car-server-eight-sigma.vercel.app/productByKeys', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -32,7 +32,7 @@ const Checkout = () => {
             address
         };
 
-        fetch('http://localhost:5000/order', {
+        fetch('https://genius-car-server-eight-sigma.vercel.app/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

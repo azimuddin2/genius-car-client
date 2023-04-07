@@ -34,7 +34,7 @@ const router = createBrowserRouter([
                 path: '/service/:id',
                 element: <ServiceDetails></ServiceDetails>,
                 loader: ({ params }) => {
-                    return fetch(`http://localhost:5000/service/${params.id}`)
+                    return fetch(`https://genius-car-server-eight-sigma.vercel.app/service/${params.id}`)
                 }
             },
             {
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
                     <Checkout></Checkout>
                 </PrivateRoute>,
                 loader: ({ params }) => {
-                    return fetch(`http://localhost:5000/service/${params.id}`)
+                    return fetch(`https://genius-car-server-eight-sigma.vercel.app/service/${params.id}`)
                 }
             },
             {

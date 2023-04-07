@@ -13,7 +13,7 @@ const PaymentSuccess = () => {
     const [order, setOrder] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:5000/order/by-transaction-id/${transactionId}`)
+        fetch(`https://genius-car-server-eight-sigma.vercel.app/order/by-transaction-id/${transactionId}`)
             .then(res => res.json())
             .then(data => setOrder(data))
     }, [transactionId])
