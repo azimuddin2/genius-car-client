@@ -1,6 +1,10 @@
 import React from 'react';
-import Carousel from 'react-elastic-carousel';
 import Testimonial from './Testimonial';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { A11y, Autoplay, Navigation, Pagination } from 'swiper';
+import 'swiper/css';
+import "swiper/css/navigation";
+import 'swiper/css/pagination';
 import { Zoom } from 'react-reveal';
 import people1 from '../../../assets/images/review/people1.png';
 import people2 from '../../../assets/images/review/people2.png';
@@ -51,17 +55,8 @@ const reviews = [
 
 const Testimonials = () => {
 
-    const breakPoints = [
-        { width: 1, itemsToShow: 1, pagination: false },
-        { width: 550, itemsToShow: 2, itemsToScroll: 2, pagination: false },
-        { width: 850, itemsToShow: 2, pagination: false },
-        { width: 1150, itemsToShow: 2, itemsToScroll: 2, pagination: false },
-        { width: 1450, itemsToShow: 3, pagination: false },
-        { width: 1750, itemsToShow: 3, pagination: false },
-    ];
-
     return (
-        <section className='my-20'>
+        <section className='mt-20 mb-10'>
             <Zoom left>
                 <div className='text-center'>
                     <p className='text-primary font-bold text-lg'>Testimonial</p>
@@ -70,19 +65,53 @@ const Testimonials = () => {
                 </div>
             </Zoom>
             <Zoom bottom>
-                <div className='styling-example mt-6 '>
-                    <Carousel
-                        breakPoints={breakPoints}
-                        enableAutoPlay
-                    >
+                <Swiper
+                    style={{
+                        "--swiper-pagination-color": "#FF3811",
+                        "--swiper-pagination-bullet-inactive-color": "#999999",
+                        "--swiper-pagination-bullet-inactive-opacity": "1",
+                        "--swiper-pagination-bullet-size": "12px",
+                        "--swiper-pagination-bullet-horizontal-gap": "3px",
+
+                        "--swiper-navigation-color": "#fff",
+                        "--swiper-navigation-size": "18px",
+                        "--swiper-navigation-top-offset": "6%"
+                    }}
+                    className="mySwiper"
+                    breakpoints={{
+                        576: {
+                            width: 576,
+                            slidesPerView: 1,
+                        },
+                        768: {
+                            width: 768,
+                            slidesPerView: 1,
+                            spaceBetween: 12,
+                        },
+                        1200: {
+                            width: 1200,
+                            slidesPerView: 2,
+                            spaceBetween: 12,
+
+                        },
+                    }}
+                    modules={[A11y, Pagination, Navigation, Autoplay]}
+                    spaceBetween={24}
+                    autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    }}
+                    navigation={true}
+                    pagination={{ clickable: true }}
+                >
+                    <div>
                         {
-                            reviews.map(review => <Testimonial
-                                key={review.id}
-                                review={review}
-                            ></Testimonial>)
+                            reviews.map(review => <SwiperSlide key={review._id}>
+                                <Testimonial review={review}></Testimonial>
+                            </SwiperSlide>)
                         }
-                    </Carousel>
-                </div>
+                    </div>
+                </Swiper>
             </Zoom>
         </section>
     );

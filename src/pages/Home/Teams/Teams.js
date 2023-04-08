@@ -1,5 +1,9 @@
 import React from 'react';
-import Carousel from 'react-elastic-carousel';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { A11y, Autoplay, Navigation, Pagination } from 'swiper';
+import 'swiper/css';
+import "swiper/css/navigation";
+import 'swiper/css/pagination';
 import { Zoom } from 'react-reveal';
 import team1 from '../../../assets/images/team/1.jpg';
 import team2 from '../../../assets/images/team/2.jpg';
@@ -48,15 +52,6 @@ const teams = [
 
 const Teams = () => {
 
-    const breakPoints = [
-        { width: 1, itemsToShow: 1, pagination: false },
-        { width: 550, itemsToShow: 2, itemsToScroll: 2, pagination: false },
-        { width: 850, itemsToShow: 3, pagination: false },
-        { width: 1150, itemsToShow: 3, itemsToScroll: 2, pagination: false },
-        { width: 1450, itemsToShow: 3, pagination: false },
-        { width: 1750, itemsToShow: 3, pagination: false },
-    ];
-
     return (
         <section className='mb-8 mt-16 lg:my-20'>
             <Zoom left>
@@ -67,18 +62,53 @@ const Teams = () => {
                 </div>
             </Zoom>
             <Zoom bottom>
-                <div className='mt-6'>
-                    <Carousel
-                        breakPoints={breakPoints}
-                        enableAutoPlay
+                <div>
+                    <Swiper
+                        style={{
+                            "--swiper-pagination-color": "#FF3811",
+                            "--swiper-pagination-bullet-inactive-color": "#999999",
+                            "--swiper-pagination-bullet-inactive-opacity": "1",
+                            "--swiper-pagination-bullet-size": "12px",
+                            "--swiper-pagination-bullet-horizontal-gap": "3px",
+
+                            "--swiper-navigation-color": "#fff",
+                            "--swiper-navigation-size": "18px",
+                            "--swiper-navigation-top-offset": "4%"
+                        }}
+                        className="mySwiper lg:px-10"
+                        breakpoints={{
+                            576: {
+                                width: 576,
+                                slidesPerView: 1,
+                            },
+                            768: {
+                                width: 768,
+                                slidesPerView: 2,
+                                spaceBetween: 12,
+                            },
+                            1200: {
+                                width: 1200,
+                                slidesPerView: 3,
+                                spaceBetween: 12,
+
+                            },
+                        }}
+                        modules={[A11y, Pagination, Navigation, Autoplay]}
+                        autoplay={{
+                            delay: 2500,
+                            disableOnInteraction: false,
+                        }}
+                        navigation={true}
+                        pagination={{ clickable: true }}
                     >
-                        {
-                            teams.map(team => <Team
-                                key={team.id}
-                                team={team}
-                            ></Team>)
-                        }
-                    </Carousel>
+                        <div>
+                            {
+                                teams.map(team => <SwiperSlide key={team._id}>
+                                    <Team team={team} ></Team>
+                                </SwiperSlide>)
+                            }
+                        </div>
+                    </Swiper>
                 </div>
             </Zoom>
         </section>

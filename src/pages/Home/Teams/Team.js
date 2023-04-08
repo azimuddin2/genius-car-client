@@ -8,7 +8,7 @@ const Team = ({ team }) => {
     const { image, title, job } = team;
 
     return (
-        <div className="card border h-full md:ml-2 md:mr-2 lg:ml-2 lg:mr-2">
+        <div className="card border h-full md:ml-2 md:mr-2 lg:ml-2 lg:mr-2 mb-14 mt-20">
             <figure className="px-6 pt-6">
                 <img src={image} alt="Shoes" className="rounded-xl h-full w-full" />
             </figure>

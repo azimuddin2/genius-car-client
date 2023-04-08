@@ -5,9 +5,9 @@ const Testimonial = ({ review }) => {
     const { image, name, location } = review;
 
     return (
-        <div className="card p-6 border md:ml-2 md:mr-2 lg:ml-2 lg:mr-2">
+        <div className="card p-6 border md:ml-2 md:mr-2 lg:ml-2 lg:mr-2 mb-14 mt-20">
             <div className='flex items-center justify-between'>
-                <div className='lg:flex items-center'>
+                <div className='md:flex items-center'>
                     <div className="avatar">
                         <div className="w-14 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                             <img src={image} alt={name} />
