@@ -1,4 +1,4 @@
-import Main from "../layout/Main/Main";
+import Main from "../layout/Main";
 import Checkout from "../pages/Service/Checkout/Checkout";
 import Contact from "../pages/Contact/Contact";
 import Home from "../pages/Home/Home/Home";
