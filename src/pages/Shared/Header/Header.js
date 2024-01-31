@@ -21,7 +21,7 @@ const Header = () => {
     const navOptions = <>
         <li><CustomLink to='/'>Home</CustomLink></li>
         <li><CustomLink to='/about'>About</CustomLink></li>
-        <li><CustomLink to='/services'>Services</CustomLink></li>
+        <li><CustomLink to='/products'>Products</CustomLink></li>
         <li><CustomLink to='/contact'>Contact</CustomLink></li>
         <li>
             {
@@ -64,7 +64,7 @@ const Header = () => {
                     </div>
                 </Link>
                 <Link
-                    to="/appointment"
+                    to="/services"
                     className="btn btn-sm lg:btn-md rounded lg:rounded-lg btn-outline btn-primary ml-5 capitalize"
                 >
                     Appointment

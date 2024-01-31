@@ -17,7 +17,7 @@ const MoreProducts = () => {
                     <p className='lg:w-1/2 mx-auto text-secondary leading-7 mt-3 capitalize'>the majority have suffered alteration in some form, by injected humour, or randomised  words which don't look even slightly believable. </p>
                 </div>
             </Zoom>
-            <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6 pt-12 pb-16'>
+            <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5 pt-12 pb-16'>
                 {
                     products.map(product => <Product
                         key={product._id}

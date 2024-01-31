@@ -50,11 +50,11 @@ const CheckoutModal = ({ checkoutModal, totalPrice }) => {
         <div>
             <input type="checkbox" id="checkout-modal" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle">
-                <div className="modal-box relative">
-                    <label htmlFor="checkout-modal" className="btn btn-primary btn-sm md:btn-md btn-circle absolute right-2 top-2 text-white">✕</label>
+                <div className="modal-box relative p-5">
+                    <label htmlFor="checkout-modal" className="btn btn-primary btn-sm btn-circle absolute right-2 top-2 text-white">✕</label>
                     <div className='rounded-xl' style={{ backgroundColor: '#F3F3F3' }}>
-                        <form onSubmit={handleSubmit} className="card-body px-4 md:px-8 lg:px-8">
-                            <div className='grid grid-cols-1 gap-2'>
+                        <form onSubmit={handleSubmit} className="card-body px-4 lg:px-6">
+                            <div className='grid grid-cols-1 lg:grid-cols-2 gap-2'>
                                 <div className="form-control mb-2">
                                     <input
                                         name='firstName'

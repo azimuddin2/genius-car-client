@@ -19,7 +19,7 @@ const Service = ({ service }) => {
                         <p className='text-primary font-semibold text-xl'>Price: ${price}</p>
                         <IoArrowForwardCircleOutline
                             onClick={() => navigate(`/service/${_id}`)}
-                            className='text-primary text-3xl cursor-pointer'
+                            className='text-primary text-4xl cursor-pointer'
                         ></IoArrowForwardCircleOutline>
                     </div>
                 </div>

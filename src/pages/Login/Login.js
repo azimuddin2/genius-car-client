@@ -93,7 +93,7 @@ const Login = () => {
                             </form>
                             <p className='text-center text-neutral font-medium text-base'>Or Login with</p>
                             <SocialLogin></SocialLogin>
-                            <p className='text-center text-base text-secondary'>New account? <Link to='/signup' className='text-primary font-semibold'>Sign Up</Link></p>
+                            <p className='text-center text-base text-secondary'>New account? <Link to='/signup' className='text-primary font-semibold link'>Sign Up</Link></p>
                         </div>
                     </Fade>
                 </div>

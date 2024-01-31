@@ -7,13 +7,13 @@ const About = () => {
     return (
         <div className="hero my-10 lg:my-16">
             <div className="hero-content flex-col lg:flex-row">
-                <Fade left>
+                <Fade top>
                     <div className='relative lg:w-1/2'>
                         <img src={person} alt='Person' className="w-4/5 h-full rounded-lg" />
                         <img src={parts} alt='Parts' className="absolute right-5 top-1/2 w-3/5 border-8 border-white rounded-lg" />
                     </div>
                 </Fade>
-                <Fade right>
+                <Fade bottom>
                     <div className='lg:w-1/2'>
                         <p className='text-primary font-bold text-lg mb-4'><span>About Us</span></p>
                         <h1 className="text-3xl lg:text-5xl font-semibold text-accent leading-tight lg:w-96">We are qualified & of experience in this field</h1>
