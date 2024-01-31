@@ -12,7 +12,7 @@ const BannerItem = ({ slide }) => {
             </div>
 
             <div className="absolute flex justify-end transform -translate-y-1/2 left-4 lg:left-24 lg:w-96 top-1/4 lg:top-1/3">
-                <h1 className='text-2xl lg:text-6xl text-white font-semibold'>Affordable Price For Car Servicing</h1>
+                <h1 className='text-xl lg:text-6xl text-white font-semibold'>Affordable Price For Car Servicing</h1>
             </div>
 
             <div className="absolute flex justify-end transform -translate-y-1/2 left-4 lg:left-24 lg:w-2/5 top-1/2">
@@ -20,15 +20,15 @@ const BannerItem = ({ slide }) => {
             </div>
 
             <div className="absolute flex justify-end transform -translate-y-1/2 left-4 lg:left-24 top-3/4 lg:top-2/3">
-                <button className="btn btn-primary text-white mr-2 lg:mr-5">Discover More</button>
-                <button className="btn btn-outline text-white hidden md:block lg:block">Latest Project</button>
+                <button className="btn btn-sm lg:btn-md btn-primary rounded lg:rounded-lg text-white mr-2 lg:mr-5">Discover More</button>
+                <button className="btn btn-sm lg:btn-md btn-outline rounded lg:rounded-lg text-white">Latest Project</button>
             </div>
 
-            <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-4 lg:right-12 -bottom-5 lg:bottom-0">
-                <a href={`#slide${prev}`} className="btn btn-circle mr-4" style={{ background: "rgba(255, 255, 255, 0.2)" }}>
+            <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-4 lg:right-12 -bottom-3 lg:bottom-0">
+                <a href={`#slide${prev}`} className="btn btn-sm lg:btn-md btn-circle mr-2 lg:mr-4" style={{ background: "rgba(255, 255, 255, 0.2)" }}>
                     <FaArrowLeft></FaArrowLeft>
                 </a>
-                <a href={`#slide${next}`} className="btn btn-primary btn-circle">
+                <a href={`#slide${next}`} className="btn btn-sm lg:btn-md btn-primary btn-circle">
                     <FaArrowRight></FaArrowRight>
                 </a>
             </div>

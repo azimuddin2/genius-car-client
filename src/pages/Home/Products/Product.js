@@ -4,6 +4,7 @@ import { Fade } from 'react-reveal';
 import useCart from '../../../hooks/useCart';
 import { addToDb } from '../../../utilities/storageDB';
 import './Product.css';
+import toast from 'react-hot-toast';
 
 const Product = ({ product }) => {
     const { image, title, price } = product;
@@ -21,7 +22,7 @@ const Product = ({ product }) => {
             exists.quantity = exists.quantity + 1;
             newCart = [...rest, exists];
         }
-
+        toast.success('Product added to cart');
         setCart(newCart);
         addToDb(selectedProduct._id);
     };

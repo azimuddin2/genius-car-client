@@ -86,17 +86,14 @@ const Testimonials = () => {
                         768: {
                             width: 768,
                             slidesPerView: 1,
-                            spaceBetween: 12,
                         },
                         1200: {
                             width: 1200,
                             slidesPerView: 2,
-                            spaceBetween: 12,
-
                         },
                     }}
                     modules={[A11y, Pagination, Navigation, Autoplay]}
-                    spaceBetween={24}
+                    spaceBetween={20}
                     autoplay={{
                         delay: 2500,
                         disableOnInteraction: false,

@@ -18,7 +18,7 @@ const Header = () => {
             })
     };
 
-    const menuItems = <>
+    const navOptions = <>
         <li><CustomLink to='/'>Home</CustomLink></li>
         <li><CustomLink to='/about'>About</CustomLink></li>
         <li><CustomLink to='/services'>Services</CustomLink></li>
@@ -44,16 +44,16 @@ const Header = () => {
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-80 font-semibold">
-                        {menuItems}
+                        {navOptions}
                     </ul>
                 </div>
                 <Link to='/' className="normal-case text-xl">
-                    <img className='w-24' src={logo} alt="Logo" />
+                    <img className='w-14 lg:w-24' src={logo} alt="Logo" />
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 font-semibold">
-                    {menuItems}
+                    {navOptions}
                 </ul>
             </div>
             <div className="navbar-end">
@@ -63,7 +63,12 @@ const Header = () => {
                         <span className="badge badge-sm indicator-item bg-primary border-none text-white">{cart.length}</span>
                     </div>
                 </Link>
-                <Link to="/appointment" className="btn btn-outline btn-primary ml-5 capitalize">Appointment</Link>
+                <Link
+                    to="/appointment"
+                    className="btn btn-sm lg:btn-md rounded lg:rounded-lg btn-outline btn-primary ml-5 capitalize"
+                >
+                    Appointment
+                </Link>
             </div>
         </div>
     );

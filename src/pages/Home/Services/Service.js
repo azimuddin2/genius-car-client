@@ -1,5 +1,5 @@
 import React from 'react';
-import { HiArrowRight } from 'react-icons/hi';
+import { IoArrowForwardCircleOutline } from "react-icons/io5";
 import { Fade } from 'react-reveal';
 import { useNavigate } from 'react-router-dom';
 
@@ -17,10 +17,10 @@ const Service = ({ service }) => {
                     <h2 className="card-title font-bold text-2xl text-neutral">{title}</h2>
                     <div className='flex items-center justify-between'>
                         <p className='text-primary font-semibold text-xl'>Price: ${price}</p>
-                        <HiArrowRight
+                        <IoArrowForwardCircleOutline
                             onClick={() => navigate(`/service/${_id}`)}
-                            className='text-primary text-2xl cursor-pointer'
-                        ></HiArrowRight>
+                            className='text-primary text-3xl cursor-pointer'
+                        ></IoArrowForwardCircleOutline>
                     </div>
                 </div>
             </div>
